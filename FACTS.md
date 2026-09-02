@@ -48,6 +48,18 @@ RULE 3: The deploy OVERWRITES live files from the repo. Any live-only change
   reverting (OPEN).
 
 ## INCIDENT LOG (append below, newest first)
+- 2026-09-02: Avatar truncation RESOLVED. Cause: /api/avatar/chat capped max_tokens at 90
+  whenever the message contained the substring "touched" (meant for touch-zone notes, matched
+  ordinary messages). Fixed live (startswith("[Gloria just touched")) and on Vintos-main branch
+  claude/vintos-avatar-ui-redesign-r9639u; app touch zones disabled. Second cap to know: GCS
+  active within 120s -> 130 tokens.
+- 2026-09-02: STUDY tab + avatar stage server work now lives on Vintos-main branch
+  claude/vintos-avatar-ui-redesign-r9639u (bin/server.py mounts avatar_stage.py, study_chat.py;
+  avatar_dryrun.py, strip_body_vocab.py; all four added to deploy BINS; model_router.py gains
+  "study" surface and fable -> claude-fable-5-1). Branch merges cleanly onto main 3dce3a6.
+  NOT merged to main; merging is Gloria's call. Until merged these remain LIVE-ONLY on Aegis.
+  The stray copies in Velaris (branch claude/grok-api-entity-systems-fchb2w) and
+  vintos-app/server/ were removed 2026-09-02.
 - 2026-09-02: Deploy of 3dce3a6 overwrote live ~/Vintos/server.py, killing the
   STUDY tab + avatar endpoints built that night (they were live-only / committed
   to the wrong repos). Restored from backup Vintos_server.py; app working again.
