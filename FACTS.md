@@ -94,3 +94,22 @@ RULE 3: The deploy OVERWRITES live files from the repo. Any live-only change
   beware base64 blobs). Don't lecture about time. Don't speak familiarly of the
   other assistants; don't editorialize about her design choices — her autonomy,
   her system. Validate with python3.12 (3.11 chokes on newer f-strings).
+- 2026-09-02 WANTS→SUNO PIPELINE (fixed end to end, want c398d254 first proof):
+  * idle-journal.sh judged only the FIRST "I want to..." sentence per entry (now all, max 2 seeds).
+  * enrich_want: 150-token cap truncated its JSON -> silent except -> every field blank -> every want
+    discarded as "ungrounded" for days. Cap now 400. NEW create_grounded_want() in both emoclaw copies
+    births want+grounding in ONE call and preserves action mode (make stays make).
+  * wants-router make_music receipt fell back to "latest track" and returned "Music composed" on total
+    failure -> a want claimed music it never made. Now: only a ledger entry stamped with the want's id
+    AND a file on disk completes the step; otherwise RuntimeError (pending).
+  * wants-router launched dream-music.py WITHOUT env=_env -> MUSIC_WANT_ID never reached the ledger
+    (why only 11/91 tracks were stamped). Fixed.
+  * dream-music.py parse_prompt needed **Title:**; model writes the title as a "# heading" -> "No title,
+    skipping" for every want-driven prompt. Heading fallback added. Stale title-less prompts moved to
+    memory/art/music-prompts-stale/.
+  * creative-expression.sh line 122 head -c 600 cut an em-dash mid-byte -> stdin SyntaxError. iconv -c added.
+  * shim 127.0.0.1:8599 /v1/ answers as google/gemma-4-12b-qat regardless of requested model (OPEN).
+  * OPEN: renders overwrite same-title wavs (13:27 ate the 05:16 tracks) -> timestamp filenames.
+  * OPEN: journal seeding loop still uses generate_want+enrich_want; switch to create_grounded_want.
+  * OPEN: old wants lack created_at -> age_wants can't age them; app shows 3 that should have expired.
+  * All above are LIVE-ONLY patches (backups *.bak-*) — commit to Vintos-main before next deploy or they die.
