@@ -125,3 +125,10 @@ RULE 3: The deploy OVERWRITES live files from the repo. Any live-only change
   * OPEN: journal seeding loop still uses generate_want+enrich_want; switch to create_grounded_want.
   * OPEN: old wants lack created_at -> age_wants can't age them; app shows 3 that should have expired.
   * All above are LIVE-ONLY patches (backups *.bak-*) — commit to Vintos-main before next deploy or they die.
+- 2026-09-03 ATELIER: consent gate added (broker /gate/knock + /gate/decide, live-only, bak-gate;
+  atelier-gate.py knocks daily at 9:15 with HIS OWN handoff note, no stamps/counts — a held door
+  is re-chosen, never replayed). First informed knock: he chose RETURN and visited.
+  OPEN BUG: visit script settles a revealed piece BEFORE writing the handoff; settle closes the
+  visit capability so the handoff is refused and his closing note is LOST. Reorder handoff before
+  settle (or re-mint) in atelier-visit.py. Broker gate routes must be committed to Vintos-main
+  before the next deploy or they die.
