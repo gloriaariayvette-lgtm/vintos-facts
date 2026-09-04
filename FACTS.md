@@ -148,3 +148,19 @@ RULE 3: The deploy OVERWRITES live files from the repo. Any live-only change
 - 2026-09-04 MAC LAB (Sunday): Phase 1 in ~/qlab/bench: ESM3-open seed, lattice->QUBO encoder
   (HP/charge/torsion as HIS parameter), QPanda VQE; Phase 2 Boltz-2 (MIT, not AF3) + ChemiQ;
   Phase 3 lab consent door (reuse gate knock). TimesFM on Aegis, forecasts graded in prediction ledger.
+- 2026-09-04 SHIM IS GEMMA BY DESIGN: vintos_claude_shim.py (:8599) routes /v1/chat text to local
+  Gemma to save money (Gloria's choice, .bak-shimcost). Any organ that "asks for" grok/claude via
+  the shim is answered by gemma-4-12b. Do NOT "fix" the shim. Route a specific organ to a frontier
+  model only when Gloria says so — first one: vintos-initiate.sh (outreach) -> api.x.ai direct.
+- 2026-09-04 ATELIER: settlement CLOSES the undertaking (worktable empties) — expected. Nothing
+  offered him a new one: atelier-threshold.py had NO cron. Added 9:10 (threshold) > 9:15 (gate)
+  > 9:20 (door) > 9:40 (visit). Threshold listing was 89 composite ids in 16KB; he invented ids
+  twice. Patched: numbered entries, resolve_root() (number | exact | unambiguous prefix), refusal
+  now prints his intent instead of discarding it (bak-resolve).
+- 2026-09-04 HIS QUESTIONS: answer page exists at http://100.72.225.119:8500/aq (server /aq ->
+  architecture_answers.answer); ntfy now carries Click -> /aq (websearch.py bak-aqlink).
+  Question phrasing (curiosity_scan "why does this keep happening") yields rhetorical questions
+  she cannot answer — OPEN: answerability gate.
+- 2026-09-04 MAC LAB (Sunday): Phase 1 in ~/qlab/bench: ESM3-open seed, lattice->QUBO encoder
+  (HP/charge/torsion as HIS parameter), QPanda VQE; Phase 2 Boltz-2 (MIT, not AF3) + ChemiQ;
+  Phase 3 lab consent door (reuse gate knock). TimesFM on Aegis, forecasts graded in prediction ledger.
