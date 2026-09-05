@@ -175,3 +175,14 @@ RULE 3: The deploy OVERWRITES live files from the repo. Any live-only change
   (bak-look) — the five sudo broker lines in deploy would DESTROY gate+LOOK until the repo's
   broker/broker.py carries both. House side (visit/threshold offering KEPT and look) is the other
   thread's build.
+- 2026-09-05 BROKER LOOK/KEPT (broker/LOOK-SPEC.md) built by the Claude thread against the live
+  broker (repo 9a4f13c broker.py + gate patch; recon md5 45d2a3d2d55e, 675 lines). Adds KEPT state
+  (/state/kept, VISIT-only, note required, one-lock table release, visibility untouched); LOOK
+  capability (kind:"look", exact-digest, 1h, opens ONLY /artifact — its presence at any other door
+  is a refusal); /look/offer (HOUSE, content-free one-use receipt) -> /look/mint (consumes it);
+  make() never overwrites (open "x" + nonce) and returns sha256; a look writes one content-free
+  event. Room's 10 tests: 33/33. 40 existing broker suites: identical before/after. Patch script:
+  /tmp/patch_look_kept.py on Aegis (source in the Claude session). LIVE-ONLY once installed
+  (bak-look) — the five sudo broker lines in deploy would DESTROY gate+LOOK until the repo's
+  broker/broker.py carries both. House side (visit/threshold offering KEPT and look) is the other
+  thread's build.
