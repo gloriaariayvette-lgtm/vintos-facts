@@ -190,3 +190,7 @@ RULE 3: The deploy OVERWRITES live files from the repo. Any live-only change
   house threshold can offer LOOK on pre-ledger finished work. Look token there is refused. Tests 37/37,
   regression unchanged. Live-only (bak-projects). Patch: /tmp/patch_projects.py. Repo broker/broker.py now
   lags live by THREE patches (gate, look/kept, projects) — commit all three before any sudo broker lines.
+- 2026-09-05 BROKER /projects (HOUSE): content-free [{id,state,artifact_count,kept_at|revealed_at}] so the
+  house threshold can offer LOOK on pre-ledger finished work. Look token there is refused. Tests 37/37,
+  regression unchanged. Live-only (bak-projects). Patch: /tmp/patch_projects.py. Repo broker/broker.py now
+  lags live by THREE patches (gate, look/kept, projects) — commit all three before any sudo broker lines.
